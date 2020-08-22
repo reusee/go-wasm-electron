@@ -1,3 +1,3 @@
 module github.com/reusee/go-wasm-electron
 
-go 1.16
+go 1.15
