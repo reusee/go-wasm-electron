@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="wasm_exec.js"></script>
+    <script>
+      const go = new Go();
+      let mod, inst;
+      WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((result) => {
+        console.clear();
+        mod = result.module;
+        inst = result.instance;
+        go.run(inst);
+        inst = WebAssembly.instantiate(mod, go.importObject); // reset instance
+      }).catch((err) => {
+        console.error(err);
+      });
+    </script>
+  </body>
+</html>
+
