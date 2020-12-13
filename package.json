@@ -9,6 +9,6 @@
   "author": "",
   "license": "Apache",
   "devDependencies": {
-    "electron": "^9.2.1"
+    "electron": "^9.3.1"
   }
 }
